@@ -23,7 +23,7 @@ def index():
     return jsonify(response)
 
 def fetch_conversion_factor(source,target):
-    url = "https://prepaid.currconv.com/api/v7/convert?q={}_{}&compact=ultra&apiKey=pr_4ab3ba77b4d74cd69825e9911c7ef1eb".format(source,target)
+    url = "https://prepaid.currconv.com/api/v7/convert?q=[Put Your API Key Here]".format(source,target)
 
     response = requests.get(url)
     response =  response.json()
