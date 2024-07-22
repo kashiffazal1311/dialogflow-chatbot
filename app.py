@@ -9,9 +9,6 @@ def index():
     source_currency = data['queryResult']['parameters']['unit-currency']['currency']
     amount = data['queryResult']['parameters']['unit-currency']['amount']
     target_currency = data['queryResult']['parameters']['currency-name']
-    #print(source_currency)
-    #print(amount)
-    #print(target_currency)
 
     cf = fetch_conversion_factor(source_currency,target_currency)
     final_amount = amount * cf
