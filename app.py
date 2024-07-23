@@ -10,6 +10,7 @@ def index():
     amount = data['queryResult']['parameters']['unit-currency']['amount']
     target_currency = data['queryResult']['parameters']['currency-name']
 
+
     cf = fetch_conversion_factor(source_currency,target_currency)
     final_amount = amount * cf
     final_amount = round(final_amount,2)
@@ -20,7 +21,7 @@ def index():
     return jsonify(response)
 
 def fetch_conversion_factor(source,target):
-    url = "https://prepaid.currconv.com/api/v7/convert?q=[Put Your API Key Here]".format(source,target)
+    url = "https://prepaid.currconv.com/api/v7/convert?q={}_{}&compact=ultra&apiKey=pr_4ab3ba77b4d74cd69825e9911c7ef1eb".format(source,target)
 
     response = requests.get(url)
     response =  response.json()
